@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>BaiTap JS Buoi 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <section class="container-lg" style="width: 70%; margin: 50px auto;text-align: center;">
+      <h1>Quản lý tuyển sinh</h1>
+      <h4>Điều kiện xét tuyển</h4>
+      <h6>Điểm tổng kết 3 môn lớn hơn hoặc bằng điểm chuẩn</h6>
+      <h6>Không môn nào điểm 0</h6>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-check">
+            <h6>Chọn khu vực tuyển sinh</h6>
+            <select class="custom-select custom-select-lg mb-3" id="khuVuc">
+              <option value="" selected>Open this select menu</option>
+              <option value="2">Khu vực A: 2đ</option>
+              <option value="1">Khu vực B: 1đ</option>
+              <option value="0.5">Khu vực C: 0.5đ</option>
+              <option value="0">Khu vực X: 0đ</option>
+              <option value="10">Khu vực cách li</option>
+            </select>
+
+          </div>
+
+          <div class="form-check">
+            <h6>Chọn đối tượng tuyển sinh</h6>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline0" name="customRadioInline" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline0">Đối tượng 0: 0đ</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline1">Đối tượng 1: 2.5đ</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline2">Đối tượng 2: 1.5đ</label>
+            </div><br>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInline3">Đối tượng 3: 1đ</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="customRadioInlineW" name="customRadioInline" class="custom-control-input">
+              <label class="custom-control-label" for="customRadioInlineW">Đối tượng truy nã</label>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <h6>Môn Thể Dục</h6>
+            <input type="number" name="" id="grade1" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Nhập điểm</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Môn Giáo Dục Công Dân</h6>
+            <input type="number" name="" id="grade2" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Nhập điểm</small>
+          </div>
+          <div class="form-group">
+            <h6>Môn Đạo Đức</h6>
+            <input type="number" name="" id="grade3" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Nhập điểm</small>
+          
+          </div>
+        </div>
+
+      </div>
+      <button type="button" class="btn btn-success" id="btnApplication">
+        Kết quả xét tuyển
+      </button>
+
+
+    </section>
+    <section class="container-lg" style="width: 70%; margin: 50px auto;text-align: center;">
+      <h1>Thu tiền điện</h1>
+      <div class="form-group">
+        <label for="">Thông tin</label>
+        <input type="text" name="" id="khachHang" class="form-control" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="">Số điện tiêu thụ</label>
+        <input type="number" name="" id="soDien" class="form-control" placeholder="">
+      </div>
+      <button type="button" class="btn btn-success" onclick="clickkWh()">Tính tiền điện tiêu thụ</button>
+      <div class="container" style="visibility: hidden; margin-top: 30px;" id="showDiv">
+        <h4>Thông tin tiêu thụ điện</h4>
+        <p id="txtkWh"></p>
+      </div>
+    </section> 
+    <script src="./main.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
