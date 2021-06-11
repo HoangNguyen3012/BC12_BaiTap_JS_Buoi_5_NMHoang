@@ -7,7 +7,7 @@ var getEleValue = function(id){
 
 // Bài tập xét tuyển sinh
 // Input điểm chuẩn
-const diemChuan = 6.5;
+const diemChuan = 6.5*3;
 
 var btnApplication = getEle('btnApplication');
 btnApplication.onclick= function() {
